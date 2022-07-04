@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {FileSaverService} from "ngx-filesaver";
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private http: HttpClient, private fileSaverService: FileSaverService){
+
+  }
 
 
   ngOnInit() {

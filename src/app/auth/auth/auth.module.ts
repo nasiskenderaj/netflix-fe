@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth/auth.component';
+import {FileSaverModule} from "ngx-filesaver";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -13,6 +15,8 @@ import { AuthComponent } from './auth/auth.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    HttpClientModule,
+FileSaverModule
   ]
 })
 export class AuthModule { }
