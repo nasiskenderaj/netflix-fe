@@ -6,16 +6,19 @@ import {TvshowsComponent} from "../../features/features/tvshows/tvshows.componen
 import {AuthComponent} from "./auth/auth.component";
 import {RegisterComponent} from "./register/register.component";
 import {AuthorizationComponent} from "./authorization.component";
+import {DeactivateGuard} from "../../core/deactivate.guard";
 
 const routes: Routes = [
   {
     path:'', component:AuthorizationComponent,
     children:[
       {
-        path:'',component:AuthComponent
+        path:'',component:AuthComponent,
+
       },
       {
-        path:'register',component:RegisterComponent
+        path:'register',component:RegisterComponent,
+        canDeactivate:[DeactivateGuard]
       },
     ]
   }
