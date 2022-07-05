@@ -7,6 +7,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {AppRoutingModule} from "./app-routing.module";
 import {FeatureModule} from "./features/features/feature.module";
 import {AuthModule} from "./auth/auth/auth.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -21,7 +23,9 @@ import {AuthModule} from "./auth/auth/auth.module";
     FontAwesomeModule,
     AppRoutingModule,
     FeatureModule,
-    AuthModule
+    AuthModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

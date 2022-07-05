@@ -7,10 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class DeactivateGuard implements CanDeactivate<any> {
   canDeactivate(component: any, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (confirm('all you data will be lost, do you want to procced')){
-      return true
+    console.log(nextState?.root.queryParamMap);
+    if (nextState?.root.queryParamMap.has('deactivate')){
+      return true;
     }
-    return false
+    if (confirm('all your data will be lost, do you want to procced')){
+      return true;
+    }
+    return false;
   }
 
 }
