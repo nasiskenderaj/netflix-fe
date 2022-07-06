@@ -23,6 +23,8 @@ userFormGroup:FormGroup;
 
   }
 
+
+
   ngOnInit(): void {
 
   }
@@ -32,6 +34,7 @@ userFormGroup:FormGroup;
   }
 
   onclick() {
+
       this.router.navigate(['../'], {queryParams: {deactivate: true}})
 
   }
