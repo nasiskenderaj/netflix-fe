@@ -30,7 +30,7 @@
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"  style="width: 200px" routerLink="/list">Log
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"  style="width: 200px" (click)="login()">Log
                       in</button><br>
                     <a class="text-muted" >Forgot password?</a>
                   </div>
@@ -40,7 +40,14 @@
                     <a></a><button type="button" class="btn btn-danger" routerLink="register">Create new</button>
                   </div>
                 </form>
-
+                <p-dialog *ngIf='showDialog' header='Email or password not correct'
+                          [(visible)]='showDialog'
+                          [draggable]='false'
+                          [modal]='true' [blockScroll]='true' [style]="{width: '35%'}">
+                  <p> Your password or email is not correct.If you are not already a member, please register first to continue!</p>
+                  <p-button label="Try again" (click)="showDialog=false"></p-button>
+                  <p-button label="Register" style="margin-left: 5px" routerLink="register" ></p-button>
+                </p-dialog>
               </div>
             </div>
           </div>

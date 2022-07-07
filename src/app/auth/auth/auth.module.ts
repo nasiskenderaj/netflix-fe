@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import {AuthorizationComponent} from "./authorization.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CalendarModule} from "primeng/calendar";
+import {CardModule} from "primeng/card";
+import {DialogModule} from "primeng/dialog";
 
 
 
@@ -23,6 +25,8 @@ import {CalendarModule} from "primeng/calendar";
     FormsModule,
     CalendarModule,
     ReactiveFormsModule,
+    CardModule,
+    DialogModule,
 
   ]
 })
