@@ -11,7 +11,7 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form [formGroup]="signInFormGroup">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/799px-Netflix_2015_logo.svg.png" style="width: 100%">
@@ -20,17 +20,17 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <input type="email" id="form2Example17" class="form-control form-control-lg"formControlName="email" />
                     <label class="form-label" for="form2Example17">Email address</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example27">Password</label>
+                    <input type="password" id="form2Example27" class="form-control form-control-lg" formControlName="password"/>
+                    <label class="form-label" for="form2Example27" >Password</label>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"  style="width: 200px" (click)="login()">Log
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"  style="width: 200px" (click)="login()" [disabled]="!signInFormGroup.valid">Log
                       in</button><br>
                     <a class="text-muted" >Forgot password?</a>
                   </div>
