@@ -11,8 +11,8 @@ import {GlobalstoreService} from "../../../core/globalstore.service";
 export class RegisterComponent implements OnInit {
   date?: Date;
 userFormGroup:FormGroup;
-  showDialog=false;
-  deactivate=false;
+ // showDialog=false;
+  //deactivate=false;
   constructor(private fb:FormBuilder,private router:Router, private activatedRoute:ActivatedRoute,private localstorage:GlobalstoreService) {
     this.userFormGroup=this.fb.group(
       {
@@ -43,4 +43,5 @@ this.localstorage.setItem('email',this.userFormGroup.get('email')?.value);
       this.router.navigate(['../'], {queryParams: {deactivate: true}})
 
   }
+
 }
