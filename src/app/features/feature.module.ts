@@ -8,21 +8,35 @@ import { TvshowsComponent } from './features/tvshows/tvshows.component';
 import {FileSaverModule} from "ngx-filesaver";
 import {HttpClientModule} from "@angular/common/http";
 import {UiGridComponent} from "../shared/ui-grid/ui-grid.component";
+import { SearchComponent } from './features/search/search.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { MovieByCategoryComponent } from './features/movie-by-category/movie-by-category.component';
+import { ActionMoviesComponent } from './features/action-movies/action-movies.component';
+import { ComedyMoviesComponent } from './features/comedy-movies/comedy-movies.component';
+import { RomanceMoviesComponent } from './features/romance-movies/romance-movies.component';
+import { UserlistComponent } from './features/userlist/userlist.component';
 
 
-@NgModule({
+ @NgModule({
   declarations: [
     HomeComponent,
     FeatureComponent,
     TvshowsComponent,
-    UiGridComponent
+    UiGridComponent,
+    SearchComponent,
+    MovieByCategoryComponent,
+    ActionMoviesComponent,
+    ComedyMoviesComponent,
+    RomanceMoviesComponent,
+    UserlistComponent
   ],
-  imports: [
-    CommonModule,
-    FeaturesRoutingModule,
-    FileSaverModule,
-    HttpClientModule
-  ]
-})
-export class FeatureModule {
-}
+   imports: [
+     CommonModule,
+     FeaturesRoutingModule,
+     FileSaverModule,
+     HttpClientModule,
+     ReactiveFormsModule
+   ]
+ })
+ export class FeatureModule {
+ }

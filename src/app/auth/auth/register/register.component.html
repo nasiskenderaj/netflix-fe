@@ -14,7 +14,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fa fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="name" class="form-control" formControlName="firstName" />
+                      <input type="text" id="name" class="form-control" formControlName="name" />
                       <div> <span style="color: red" *ngIf="(userFormGroup.get('firstName')?.touched||userFormGroup.get('firstName')?.dirty)&& !userFormGroup.get('firstName')?.valid">
                         First name is required
                       </span>
@@ -25,7 +25,7 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fa fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="lastname" class="form-control" formControlName="lastName" />
+                      <input type="text" id="lastname" class="form-control" formControlName="surname" />
                       <div> <span style="color: red" *ngIf="(userFormGroup.get('lastName')?.touched||userFormGroup.get('lastName')?.dirty)&& !userFormGroup.get('lastName')?.valid">
                        Last name is required
                       </span>
@@ -64,17 +64,31 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fa fa-birthday-cake fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <div >
-
-                      <p-calendar [(ngModel)]="date" [showIcon]="true" inputId="birthday" name="birthday" formControlName="age" ></p-calendar>
-                      </div>
-                      <div> <span style="color: red" *ngIf="(userFormGroup.get('birthday')?.touched||userFormGroup.get('birthday')?.dirty)&& !userFormGroup.get('birthday')?.valid">
-                        Birthday is required
+                      <input type="text" id="age" class="form-control"  formControlName="age" />
+                      <div> <span style="color: red" *ngIf="(userFormGroup.get('password')?.touched||userFormGroup.get('age')?.dirty)&& !userFormGroup.get('age')?.valid">
+                        Age is required
                       </span>
                       </div>
-                      <label for="birthday">Your Birthday</label>
+                      <label class="form-label" for="password">Age</label>
                     </div>
                   </div>
+
+
+
+                  <!--                  <div class="d-flex flex-row align-items-center mb-4">-->
+<!--                    <i class="fa fa-birthday-cake fa-lg me-3 fa-fw"></i>-->
+<!--                    <div class="form-outline flex-fill mb-0">-->
+<!--                      <div >-->
+
+<!--                      <p-calendar [(ngModel)]="date" [showIcon]="true" inputId="birthday" name="birthday" formControlName="age" ></p-calendar>-->
+<!--                      </div>-->
+<!--                      <div> <span style="color: red" *ngIf="(userFormGroup.get('birthday')?.touched||userFormGroup.get('birthday')?.dirty)&& !userFormGroup.get('birthday')?.valid">-->
+<!--                        Birthday is required-->
+<!--                      </span>-->
+<!--                      </div>-->
+<!--                      <label for="birthday">Your Birthday</label>-->
+<!--                    </div>-->
+<!--                  </div>-->
 
 
 
@@ -97,7 +111,7 @@
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="https://www.kultplus.com/wp-content/uploads/2019/04/netflix.png"
+                <img src="../../assets/img/netflix.svg"
                      class="img-fluid" alt="Sample image">
 
               </div>

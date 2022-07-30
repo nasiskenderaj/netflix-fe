@@ -1,7 +1,9 @@
 
+<!--movies grid
 
+-->
 
-<div style="width: 98%;margin-left: 20px;margin-right: 10px;margin-top: 10px" >
+<div style="width: 98%;margin-left: 20px;margin-right: 10px;margin-top: 10px" *ngIf="movies!==null">
   <div  style="position: relative;">
     <div class="row" >
 
@@ -19,7 +21,7 @@
               <div class="modal-body mb-0 p-0">
 
                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                  <iframe class="embed-responsive-item" src="movie.url"
+                  <iframe class="embed-responsive-item"
                           allowfullscreen style="width: 100%;height:400px"></iframe>
                 </div>
 
@@ -27,7 +29,7 @@
 
               <!--Footer-->
               <div class="modal-footer justify-content-center" >
-                <span class="mr-4">Doctor Strange!</span>
+                <span class="mr-4">{{movie.title}}</span>
                 <a type="button" class="btn-floating btn-sm btn-fb"><i class="fa fa-facebook-f"></i></a>
                 <!--Twitter-->
                 <a type="button" class="btn-floating btn-sm btn-tw"><i class="fa fa-twitter"></i></a>
@@ -46,15 +48,96 @@
         </div>
         <div class="card h-100 shadow-sm">
           <div >
-            <a> <img src="https://cdn.vox-cdn.com/thumbor/aIgnekvyjdARf_NVJj21EL37uT8=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23434598/DrStrange2_Payoff_1_Sht_v6_Lg.jpeg" alt="..."     data-bs-toggle="modal" data-bs-target="#modal1" style="height: 300px;width: 100%">
+            <a> <img src="{{movie.imageUrl}}" alt="..."     data-bs-toggle="modal" data-bs-target="#modal1" style="height: 300px;width: 100%">
             </a>
           </div>
           <div class="card-body">
             <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary"><h6>{{movie.title}}</h6>
-          </span> <span class="float-end price-hp">23.00&euro;</span>
+          </span> <span class="float-end price-hp">{{movie.price}}&euro;</span>
             </div>
             <h5 class="card-title">{{movie.description}}.</h5>
-            <div class="text-center my-4"> <a class="btn btn-warning">Add to list</a>
+            <div class="text-center my-4"> <a class="btn btn-warning" (click)="addtolist(movie.id)">Add to list</a>
+              <a class="btn btn-warning ms-3">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tvShows grid-->
+
+
+
+<div style="width: 98%;margin-left: 20px;margin-right: 10px;margin-top: 10px" *ngIf="tvshows!==null" >
+  <div  style="position: relative;">
+    <div class="row" >
+
+      <div class="col-3 my-2"  *ngFor="let tvshow of tvshows">
+
+
+
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+
+            <!--Content-->
+            <div class="modal-content" style="margin-top: 200px; height: 550px;width: 750px">
+
+              <!--Body-->
+              <div class="modal-body mb-0 p-0">
+
+                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                  <iframe class="embed-responsive-item"
+                          allowfullscreen style="width: 100%;height:400px"></iframe>
+                </div>
+
+              </div>
+
+              <!--Footer-->
+              <div class="modal-footer justify-content-center" >
+                <span class="mr-4">{{tvshow.title}}</span>
+                <a type="button" class="btn-floating btn-sm btn-fb"><i class="fa fa-facebook-f"></i></a>
+                <!--Twitter-->
+                <a type="button" class="btn-floating btn-sm btn-tw"><i class="fa fa-twitter"></i></a>
+                <!--Google +-->
+                <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fa fa-google-plus-g"></i></a>
+                <!--Linkedin-->
+                <a type="button" class="btn-floating btn-sm btn-ins"><i class="fa fa-linkedin-in"></i></a>
+                <button type="button" class="btn btn-outline-primary btn-rounded  ml-4" fileSaver   [method]="'GET'"
+                        [fileName]="'videoName.mp4'"  [url]="'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'" >Download</button>
+                <button type="button" class="btn btn-outline-primary btn-rounded  ml-4" data-bs-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="card h-100 shadow-sm">
+          <div >
+            <a> <img src="{{tvshow.imageUrl}}" alt="..."     data-bs-toggle="modal" data-bs-target="#modal1" style="height: 300px;width: 100%">
+            </a>
+          </div>
+          <div class="card-body">
+            <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary"><h6>{{tvshow.title}}</h6>
+          </span> <span class="float-end price-hp">{{tvshow.price}}&euro;</span>
+            </div>
+            <h5 class="card-title">{{tvshow.description}}.</h5>
+            <div class="text-center my-4"> <a class="btn btn-warning" (click)="addtolist(tvshow.id)">Add to list</a>
               <a class="btn btn-warning ms-3">Buy</a>
             </div>
           </div>

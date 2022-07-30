@@ -5,12 +5,15 @@
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block" style="width: 400px">
-              <img src="https://thurrott.s3.amazonaws.com/wp-content/uploads/sites/2/2022/01/14172326/netflix.jpg"
-                   alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;height: 100% " />
+              <div class="loginimg">
+              <img src="../../assets/img/netflixlogin.svg" alt="login form"  />
             </div>
+
+            </div>
+
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-
+                <div class="card-login">
                 <form [formGroup]="signInFormGroup">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
@@ -20,8 +23,8 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example17" class="form-control form-control-lg"formControlName="email" />
-                    <label class="form-label" for="form2Example17">Email address</label>
+                    <input type="email" id="form2Example17" class="form-control form-control-lg"formControlName="username" />
+                    <label class="form-label" for="form2Example17">Username</label>
                   </div>
 
                   <div class="form-outline mb-4">
@@ -49,6 +52,7 @@
                   <p-button label="Register" style="margin-left: 5px" routerLink="register" ></p-button>
                 </p-dialog>
               </div>
+            </div>
             </div>
           </div>
         </div>

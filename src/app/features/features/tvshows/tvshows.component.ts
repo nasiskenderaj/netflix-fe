@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tvshows.component.css']
 })
 export class TvshowsComponent implements OnInit {
-
+url='tvShows/tvShowsList'
   constructor() { }
 
   ngOnInit(): void {
